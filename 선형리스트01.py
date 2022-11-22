@@ -12,6 +12,14 @@ def insert_data(n, freind):
         katok[i - 1] = None
 
     katok[n] = freind
+
+def delet_data(position):
+    katok[position] = None
+    k_len = len(katok)
+    for i in range(position + 1, k_len, 1):
+        katok[i-1] = katok[i]
+        katok[i] = None
+    del katok[k_len -1]
     
 
 ##전역 변수부
@@ -31,4 +39,8 @@ print(katok)
 
 #2등 자리에 '솔라'를 삽입하기
 insert_data(2, '솔라')
+print(katok)
+
+#2등자리 지우기
+delet_data(2)
 print(katok)
